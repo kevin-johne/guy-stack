@@ -1,0 +1,8 @@
+{
+  "plugins": ["@typescript-eslint", "unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}

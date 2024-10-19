@@ -1,0 +1,31 @@
+services:
+  frontend:
+    container_name: market-place-frontend
+    build:
+      context: .
+      target: dev
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./src:/app/src
+      - .next:/app/.next
+      - ./db:/app/db
+      - ./node_modules:/app/node_modules 
+  #   depends_on:
+  #     - db
+
+  # db:
+  #   container_name: market-place-db
+  #   build:
+  #     context: .
+  #     target: db
+  #   volumes:
+  #     - ./db:/data
+
